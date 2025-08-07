@@ -57,6 +57,7 @@ export const authOptions: NextAuthOptions = {
         token.id = user._id;
         token.name = user.name;
         token.email = user.email;
+        token.bio = user.bio;
         token.isVerified = user.isVerified;
       }
       return token;
@@ -67,6 +68,7 @@ export const authOptions: NextAuthOptions = {
         session.user.id = token.id as string;
         session.user.name = token.name as string;
         session.user.email = token.email as string;
+        session.user.bio = token.bio as string;
         session.user.isVerified = token.isVerified as boolean;
       }
       return session;

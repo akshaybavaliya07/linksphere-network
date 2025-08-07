@@ -1,8 +1,12 @@
 import mongoose, { Schema, Document } from "mongoose";
 
 export interface Post extends Document {
+  _id: string;
   content: string;
-  author: mongoose.Types.ObjectId;
+  author: mongoose.Types.ObjectId | {
+    _id: string;
+    name: string;
+  };
   createdAt: Date;
   updatedAt: Date;
 }
